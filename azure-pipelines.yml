@@ -23,9 +23,10 @@ steps:
       resourceGroupName: 'AzureRmPipeline-rg'
       location: 'East US'
       templateLocation: 'Linked artifact'
-      csmFile: 'CreateWebAppResources/azuredeploy.json'
+      csmFile: 'CreateWebAppCustScript/azuredeploy.json'
       #overrideParameters: '-projectName $(projectName) -linkedTemplateUri  $(urlLinkedTemplate)'
-      overrideParameters: ' -adminUsername $(adminUsername) -dnsLabelPrefix $(dnsLabelPrefix)'
+      #overrideParameters: ' -adminUsername $(adminUsername) -dnsLabelPrefix $(dnsLabelPrefix)'
+      overrideParameters:  '-identityId $(identityId) -keyVaultName $(keyVaultName) -objectId $(adUserId)'
       deploymentMode: 'Incremental'
       deploymentName: 'DeployPipelineTemplate'
       addSpnToEnvironment: true
