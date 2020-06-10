@@ -13,18 +13,19 @@ variables:
   - group: Release
 
 steps:  
-  - script: echo $(projectName) 
+  #- script: echo $(projectName) 
   - task: AzureResourceManagerTemplateDeployment@3  
     inputs:
       deploymentScope: 'Resource Group'
       azureResourceManagerConnection: 'AzureRmPipeline-conn'
       subscriptionId: '2e10606a-6ad7-4bad-9222-e3efba853b0b'
       action: 'Create Or Update Resource Group'
-      resourceGroupName: 'AzureRmPipelineMult-rg'
+      resourceGroupName: 'AzureRmPipeline-rg'
       location: 'East US'
       templateLocation: 'Linked artifact'
-      csmFile: 'CreateWebAppMultStg/azuredeploy.json'
-      overrideParameters: '-projectName $(projectName) -linkedTemplateUri  $(urlLinkedTemplate)'
+      csmFile: 'CreateWebAppResources/azuredeploy.json'
+      #overrideParameters: '-projectName $(projectName) -linkedTemplateUri  $(urlLinkedTemplate)'
+      overrideParameters: ' -adminUsername=$(adminUsername) -dnsLabelPrefix=$(dnsLabelPrefix)'
       deploymentMode: 'Incremental'
       deploymentName: 'DeployPipelineTemplate'
       addSpnToEnvironment: true
