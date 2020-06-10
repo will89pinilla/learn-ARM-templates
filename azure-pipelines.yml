@@ -10,11 +10,11 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-  - group: release
-  - name: projectName
-steps:
+  buildConfiguration: 'Release'
+
+steps:  
   - script: echo $(projectName) 
-  - task: AzureResourceManagerTemplateDeployment@3
+  - task: AzureResourceManagerTemplateDeployment@3  
     inputs:
       deploymentScope: 'Resource Group'
       azureResourceManagerConnection: 'AzureRmPipeline-conn'
