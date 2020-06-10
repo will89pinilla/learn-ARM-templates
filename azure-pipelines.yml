@@ -9,6 +9,10 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
+variables:
+  - group: Release
+  - name: libvars
+
 steps:
   - task: AzureResourceManagerTemplateDeployment@3
     inputs:
@@ -20,7 +24,7 @@ steps:
       location: 'East US'
       templateLocation: 'Linked artifact'
       csmFile: 'CreateWebApp/azuredeploy.json'
-      overrideParameters: '-projectName [EnterAProjectName] -linkedTemplateUri [EnterTheLinkedTemplateURL]'
+      overrideParameters: '-projectName $[libvars.projectName] -linkedTemplateUri [libvars.urlLinkedTemplate]'
       deploymentMode: 'Incremental'
       deploymentName: 'DeployPipelineTemplate'
       addSpnToEnvironment: true
