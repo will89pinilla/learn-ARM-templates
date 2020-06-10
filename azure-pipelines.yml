@@ -10,11 +10,11 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-  - group: Release
+  - group: project-variables
   - name: libvars
 
 steps:
-  - script: echo $(libvars.projectName)
+  - script: echo "this is the libvars $(libvars.projectName)"
   - task: AzureResourceManagerTemplateDeployment@3
     inputs:
       deploymentScope: 'Resource Group'
