@@ -14,6 +14,7 @@ variables:
   - name: libvars
 
 steps:
+  - script: echo $(libvars.projectName)
   - task: AzureResourceManagerTemplateDeployment@3
     inputs:
       deploymentScope: 'Resource Group'
