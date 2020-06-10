@@ -11,9 +11,12 @@ pool:
 
 variables:
   - group: release
+  - name: projectName
+    value: $[variables.projectName]
+
 
 steps:
-  - script: echo "this is the libvars $(release.projectName)"
+  - script: echo "this is the libvars $(projectName)"
   - task: AzureResourceManagerTemplateDeployment@3
     inputs:
       deploymentScope: 'Resource Group'
@@ -24,7 +27,7 @@ steps:
       location: 'East US'
       templateLocation: 'Linked artifact'
       csmFile: 'CreateWebApp/azuredeploy.json'
-      overrideParameters: '-projectName $[release.projectName] -linkedTemplateUri [release.urlLinkedTemplate]'
+      overrideParameters: '-projectName $(projectName) -linkedTemplateUri [release.urlLinkedTemplate]'
       deploymentMode: 'Incremental'
       deploymentName: 'DeployPipelineTemplate'
       addSpnToEnvironment: true
