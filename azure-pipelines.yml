@@ -25,7 +25,7 @@ steps:
       templateLocation: 'Linked artifact'
       csmFile: 'CreateWebAppResources/azuredeploy.json'
       #overrideParameters: '-projectName $(projectName) -linkedTemplateUri  $(urlLinkedTemplate)'
-      overrideParameters: ' -adminUsername=$(adminUsername) -dnsLabelPrefix=$(dnsLabelPrefix)'
+      overrideParameters: ' -adminUsername $(adminUsername) -dnsLabelPrefix $(dnsLabelPrefix)'
       deploymentMode: 'Incremental'
       deploymentName: 'DeployPipelineTemplate'
       addSpnToEnvironment: true
