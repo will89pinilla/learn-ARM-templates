@@ -24,7 +24,7 @@ steps:
       location: 'East US'
       templateLocation: 'Linked artifact'
       csmFile: 'CreateWebApp/azuredeploy.json'
-      overrideParameters: '-projectName $(projectName) -linkedTemplateUri [release.urlLinkedTemplate]'
+      overrideParameters: '-projectName $(projectName) -linkedTemplateUri  $(urlLinkedTemplate)'
       deploymentMode: 'Incremental'
       deploymentName: 'DeployPipelineTemplate'
       addSpnToEnvironment: true
