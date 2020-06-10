@@ -12,11 +12,8 @@ pool:
 variables:
   - group: release
   - name: projectName
-    value: $[variables.projectName]
-
-
 steps:
-  - script: echo $(projectName)
+  - script: echo $[variables.projectName]
   - task: AzureResourceManagerTemplateDeployment@3
     inputs:
       deploymentScope: 'Resource Group'
