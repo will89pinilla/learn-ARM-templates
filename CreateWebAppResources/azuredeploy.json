@@ -9,6 +9,7 @@
       }
     },
     "adminPassword": {
+      "defaultValue": "vmuser2020*",
       "type": "securestring",
       "metadata": {
         "description": "Password for the Virtual Machine."
