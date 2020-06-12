@@ -23,9 +23,9 @@ steps:
       resourceGroupName: 'AzureRmPipeline-rg'
       location: 'East US'
       templateLocation: 'Linked artifact'
-      csmFile: 'keyVault/azuredeploy.json'
+      csmFile: 'KeyVault/azuredeploy.json'
       #csmParametersFile for dirs KeyVault
-      csmParametersFile: 'keyVault/azuredeploy.parameters.json'
+      csmParametersFile: 'KeyVault/azuredeploy.parameters.json'
       #overrideParameters: '-projectName $(projectName) -linkedTemplateUri  $(urlLinkedTemplate)'
       #overrideParameters: '-adminUsername $(adminUsername) -dnsLabelPrefix $(dnsLabelPrefix)'
       #overrideParameters: '-identityId $(identityId) -keyVaultName $(keyVaultName) -objectId $(adUserId)'
