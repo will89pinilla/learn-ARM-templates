@@ -8,7 +8,7 @@
     "adminPassword": {
       "reference": {
         "keyVault": {
-          "id": "/subscriptions/2e10606a-6ad7-4bad-9222-e3efba853b0b/resourceGroups/webappwillkeyvault8907rg"
+          "id": "/subscriptions/2e10606a-6ad7-4bad-9222-e3efba853b0b/resourceGroups/webappwillkeyvault8907rg/providers/Microsoft.KeyVault/vaults/webappwillkeyvault8907"
         },
         "secretName": "vmAdminPassword"
       }      
