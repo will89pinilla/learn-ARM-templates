@@ -31,7 +31,7 @@ steps:
       #overrideParameters: '-identityId $(identityId) -keyVaultName $(keyVaultName) -objectId $(adUserId)'
       #overrideParameters: '-adminUsername $(adminUsername) -adminPassword $(adminPassword) -dnsLabelPrefix $(dnsLabelPrefix)'
       #overrideParameters: 'for KeyVault it will use csmParameters'
-      overrideParameters: '-adminUsername $(adminUsername) -adminPassword $(adminPassword) -storageAccountKey $(storageAccountKey) -bacpacUrl $(bacpacUrl)'
+      overrideParameters: '-adminUser $(adminUsername) -adminPassword $(adminPassword) -storageAccountKey $(storageAccountKey) -bacpacUrl $(bacpacUrl)'
       deploymentMode: 'Incremental'
       deploymentName: 'DeployPipelineTemplate'
       addSpnToEnvironment: true
