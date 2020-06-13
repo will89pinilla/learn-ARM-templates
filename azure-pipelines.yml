@@ -25,7 +25,7 @@ steps:
       templateLocation: 'Linked artifact'
       csmFile: 'ARMExtension/azuredeploy.json'
       #csmParametersFile for dirs KeyVault
-      csmParametersFile: 'ARMExtension/azuredeploy.parameters.json'
+      #csmParametersFile: 'ARMExtension/azuredeploy.parameters.json'
       #overrideParameters: '-projectName $(projectName) -linkedTemplateUri  $(urlLinkedTemplate)'
       #overrideParameters: '-adminUsername $(adminUsername) -dnsLabelPrefix $(dnsLabelPrefix)'
       #overrideParameters: '-identityId $(identityId) -keyVaultName $(keyVaultName) -objectId $(adUserId)'
